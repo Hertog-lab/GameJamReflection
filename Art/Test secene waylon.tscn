@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://drk0jbaohi2dn"]
+
+[ext_resource type="PackedScene" uid="uid://bpu3sghgjhrv6" path="res://Art/Models/3d models/box.fbx" id="1_nfejr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gtxrl"]
+
+[node name="Test secene waylon" type="Node3D"]
+
+[node name="box" parent="." instance=ExtResource("1_nfejr")]
+transform = Transform3D(1.00615, 0, 0, 0, 1.00615, 0, 0, 0, 1.00615, 0.0277092, -0.150531, -0.30212)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.19757, 0, 0, 0, 6.19757, 0, 0, 0, 6.19757, 0, 0, 11.7701)
+mesh = SubResource("BoxMesh_gtxrl")
