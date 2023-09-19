@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://burmdmj7k48eh"]
+
+[ext_resource type="Script" path="res://Scripts/Player/PlayerController.gd" id="1_h5yex"]
+[ext_resource type="PackedScene" uid="uid://b8irvsam1vamv" path="res://PrefabScenes/PlayerStates/Idle.tscn" id="2_8ctrp"]
+[ext_resource type="PackedScene" uid="uid://cpiyd6r4e5smv" path="res://PrefabScenes/PlayerStates/Move.tscn" id="3_lbggi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhr7u"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_oupvc"]
+
+[node name="Player" type="Node3D" node_paths=PackedStringArray("state")]
+script = ExtResource("1_h5yex")
+state = NodePath("States/Idle")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CapsuleShape3D_xhr7u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_oupvc")
+
+[node name="States" type="Node" parent="."]
+
+[node name="Idle" parent="States" instance=ExtResource("2_8ctrp")]
+
+[node name="Move" parent="States" instance=ExtResource("3_lbggi")]
