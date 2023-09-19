@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccin0uccsm3l1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_soqis"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_imdaa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dujge"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uw4ve"]
+
+[node name="LukeNode" type="Node3D"]
+
+[node name="Bullet" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bullet"]
+shape = SubResource("SphereShape3D_soqis")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bullet/CollisionShape3D"]
+mesh = SubResource("SphereMesh_imdaa")
+
+[node name="Plane" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.48728, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane"]
+transform = Transform3D(1.44336, 0.102856, 0, -0.649699, 0.228503, 0, 0, 0, 1.62689, 0, 0, 0)
+shape = SubResource("BoxShape3D_dujge")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plane/CollisionShape3D"]
+mesh = SubResource("BoxMesh_uw4ve")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.51328)
