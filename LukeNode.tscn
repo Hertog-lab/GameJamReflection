@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccin0uccsm3l1"]
+[gd_scene load_steps=8 format=3 uid="uid://cokrp5cmduj1f"]
 
 [ext_resource type="Script" path="res://BulletBounce.gd" id="1_b1w7c"]
 [ext_resource type="Script" path="res://BulletBouncing.gd" id="2_8vhu2"]
