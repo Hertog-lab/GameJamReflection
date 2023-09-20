@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwhdc21lbuiep"]
+[gd_scene load_steps=4 format=3 uid="uid://bwhdc21lbuiep"]
+
+[ext_resource type="Script" path="res://Test.gd" id="1_f4f8y"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bbe3i"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_gegmj"]
 
-[node name="Projectile" type="RigidBody3D"]
+[node name="Projectile" type="RigidBody3D" groups=["Projectile"]]
 gravity_scale = 0.0
+max_contacts_reported = 1000000
+contact_monitor = true
+script = ExtResource("1_f4f8y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
