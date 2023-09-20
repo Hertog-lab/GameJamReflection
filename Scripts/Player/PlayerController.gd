@@ -4,8 +4,12 @@ extends Node3D
 
 # Calls the ready function of the current state
 func _ready():
-	state.StateReady()
+	print("Current state Idle")
 
 # Calleds the process function of the current state every frame
 func _process(_delta):
 	state.StateProcess()
+
+func SwapState(swappedState):
+	state = swappedState
+	swappedState.StateReady()
