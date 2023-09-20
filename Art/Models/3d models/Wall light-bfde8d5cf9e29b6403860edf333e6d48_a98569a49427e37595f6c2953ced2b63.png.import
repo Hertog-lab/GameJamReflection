@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dd5y6gsoaot15"
+path.s3tc="res://.godot/imported/Wall light-bfde8d5cf9e29b6403860edf333e6d48_a98569a49427e37595f6c2953ced2b63.png-50844b803c5983a5b0f5b79fc112622e.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={}
+
+[deps]
+
+source_file="res://Art/Models/3d models/Wall light-bfde8d5cf9e29b6403860edf333e6d48_a98569a49427e37595f6c2953ced2b63.png"
+dest_files=["res://.godot/imported/Wall light-bfde8d5cf9e29b6403860edf333e6d48_a98569a49427e37595f6c2953ced2b63.png-50844b803c5983a5b0f5b79fc112622e.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
