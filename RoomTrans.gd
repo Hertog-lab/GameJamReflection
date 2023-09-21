@@ -2,8 +2,13 @@ extends Node
 @export var IsInRoom: bool
 @export var camera : Node3D
 @export var Pos: Node3D
+@onready var ButtonScript = get_node(^"../..")
+
 
 func _process(delta):	
+	
+
+	ButtonScript.activa
 	if IsInRoom == true:
 		camera.position = Pos.position		
 		pass	

@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5pyfudybol3p"]
+
+[ext_resource type="Script" path="res://Scripts/ButtonScript.gd" id="1_bsu11"]
+[ext_resource type="Texture2D" uid="uid://buj7abnporevx" path="res://Art/UI/Begin screen.png" id="1_laowh"]
+[ext_resource type="Texture2D" uid="uid://dyt4odi2bc5ag" path="res://Art/UI/Begin Screen Buttons.png" id="2_gnfim"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BeginScreen" type="Sprite2D" parent="."]
+position = Vector2(1.72687, 0.125008)
+scale = Vector2(0.300774, 0.300116)
+texture = ExtResource("1_laowh")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = -138.0
+offset_top = 39.0
+offset_right = 142.0
+offset_bottom = 131.0
+script = ExtResource("1_bsu11")
+SceneLocation = "res://GameplayScenes/base_scene.tscn"
+
+[node name="CreditsButton" type="Button" parent="."]
+offset_left = -138.0
+offset_top = 164.0
+offset_right = 142.0
+offset_bottom = 256.0
+script = ExtResource("1_bsu11")
+SceneLocation = "res://GameplayScenes/Credits.tscn"
+
+[node name="BeginScreenButtons" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-06, 152)
+scale = Vector2(0.409887, 0.376543)
+texture = ExtResource("2_gnfim")
+
+[connection signal="button_down" from="StartButton" to="StartButton" method="_on_button_down"]
+[connection signal="button_down" from="CreditsButton" to="CreditsButton" method="_on_button_down"]
