@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://likhm7ahw76g"]
+[gd_scene load_steps=6 format=3 uid="uid://d1jiyv3hd4yc4"]
 
 [ext_resource type="PackedScene" uid="uid://86ij870cpjes" path="res://PrefabScenes/shooter.tscn" id="1_eseho"]
 [ext_resource type="PackedScene" uid="uid://bwhdc21lbuiep" path="res://PrefabScenes/projectile.tscn" id="2_mkghs"]
@@ -15,11 +15,12 @@
 [node name="Button" parent="." instance=ExtResource("3_kwu5n")]
 transform = Transform3D(0.970576, 0, 0, 0, 0.970576, 0, 0, 0, 0.970576, -3.79957, 0, 0.107449)
 
-[node name="RoomTrans" parent="." instance=ExtResource("4_k8n5j")]
+[node name="RoomTrans" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("4_k8n5j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.293013, 2.16766, 0.405558)
-
-[node name="Player" parent="." groups=["Player"] instance=ExtResource("5_1rafj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31392, 1.33964, -3.41775)
+camera = NodePath("../Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6.30827, -0.377736)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.226536, 13.8543, -3.00895)
+
+[node name="Player" parent="." instance=ExtResource("5_1rafj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.405664, 0, -5.99753)

@@ -4,12 +4,11 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j1g17"]
 
-[node name="RoomTrans" type="Node3D" node_paths=PackedStringArray("camera", "Pos")]
+[node name="RoomTrans" type="Node3D" node_paths=PackedStringArray("Pos")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0194511, 2.06688, 0)
 script = ExtResource("1_5pjbb")
 IsInRoom = true
-camera = NodePath("")
-Pos = NodePath("")
+Pos = NodePath("CamPos")
 
 [node name="CollisionArea" type="Area3D" parent="."]
 transform = Transform3D(7.37369, 0, 0, 0, 2.855, 0, 0, 0, 1, 0, 0, 0)
