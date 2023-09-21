@@ -47,8 +47,8 @@ mesh = SubResource("BoxMesh_uw4ve")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.51328)
 current = true
 
-[node name="Bullet" type="RigidBody3D" parent="." groups=["Reflective"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.53111, 0, 0)
+[node name="Bullet" type="RigidBody3D" parent="." groups=["Projectile", "Reflective"]]
+transform = Transform3D(1.00439, 0, 0, 0, 1.00439, 0, 0, 0, 1.00439, 6.53111, 0, 0)
 physics_material_override = SubResource("PhysicsMaterial_3av0c")
 gravity_scale = 0.0
 contact_monitor = true
