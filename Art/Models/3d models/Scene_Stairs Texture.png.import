@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://esc681vr827p"
+=======
+uid="uid://bobwii66ibph1"
+>>>>>>> 40b96a1116acca036bc42487e911805488370bb8
 path.s3tc="res://.godot/imported/Scene_Stairs Texture.png-858a6c4c0997728c2a669723be5d6c7f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
