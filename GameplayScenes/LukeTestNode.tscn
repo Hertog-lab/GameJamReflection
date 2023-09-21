@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://dar4sf7oquqsw"]
+
+[ext_resource type="PackedScene" uid="uid://drf758aljjsny" path="res://PrefabScenes/bullet.tscn" id="1_xtj8u"]
+[ext_resource type="PackedScene" uid="uid://0kkhs4pr6b2f" path="res://PrefabScenes/door.tscn" id="2_smbx2"]
+[ext_resource type="PackedScene" uid="uid://4aogylvacnjo" path="res://PrefabScenes/button.tscn" id="3_lov7c"]
+[ext_resource type="Script" path="res://Scripts/Button.gd" id="4_wl1my"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4mdqt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_84ipe"]
+
+[node name="LukeTestNode" type="Node3D"]
+
+[node name="Plane" type="StaticBody3D" parent="." groups=["Reflective"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.974757, -1.08899, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane"]
+transform = Transform3D(0.957208, 0.199572, 0, -1.26061, 0.151539, 0, 0, 0, 1.62689, 0, 0, 0)
+shape = SubResource("BoxShape3D_4mdqt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plane/CollisionShape3D"]
+transform = Transform3D(1, 3.72529e-09, 0, -2.38419e-07, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_84ipe")
+
+[node name="Plane2" type="StaticBody3D" parent="." groups=["Enemy"]]
+transform = Transform3D(0.836229, -0.548381, 0, 0.548381, 0.836229, 0, 0, 0, 1, 0.981324, 0.324078, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane2"]
+transform = Transform3D(0.957208, 0.199572, 0, -1.26061, 0.151539, 0, 0, 0, 1.62689, 0, 0, 0)
+shape = SubResource("BoxShape3D_4mdqt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plane2/CollisionShape3D"]
+transform = Transform3D(1, 3.72529e-09, 0, -2.38419e-07, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_84ipe")
+
+[node name="Plane3" type="StaticBody3D" parent="."]
+transform = Transform3D(0.696151, -0.717896, 0, 0.717896, 0.696151, 0, 0, 0, 1, 0.819941, -1.47109, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane3"]
+transform = Transform3D(0.957208, 0.199572, 0, -1.26061, 0.151539, 0, 0, 0, 1.62689, 0, 0, 0)
+shape = SubResource("BoxShape3D_4mdqt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plane3/CollisionShape3D"]
+transform = Transform3D(1, 3.72529e-09, 0, -2.38419e-07, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_84ipe")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.51328)
+current = true
+
+[node name="Bullet" parent="." instance=ExtResource("1_xtj8u")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.956269, -3.56238e-09, 0.292489, -0.0597578, 0.978907, 0.195374, -0.286319, -0.204308, 0.936098, 0.92615, 1.92488, 5.0123)
+
+[node name="DirectionalLight3D10" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.955896, 0, -0.293707, 0, 1, 0, 0.293707, 0, 0.955896, -1.80749, 0.155139, 6.68913)
+
+[node name="Door" parent="." instance=ExtResource("2_smbx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183368, 0.00626338, -9.17519)
+
+[node name="Button" parent="." node_paths=PackedStringArray("door") instance=ExtResource("3_lov7c")]
+transform = Transform3D(0.118042, -0.993005, -0.00279623, 0.992726, 0.118075, -0.0235162, 0.0236819, 0, 0.99972, 0.836544, -1.31447, 0.0509225)
+script = ExtResource("4_wl1my")
+door = NodePath("../Door")
