@@ -5,6 +5,10 @@ extends Node
 func _ready():
 	
 	pass # Replace with function body.
+	
+func _switchRoom():
+	
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

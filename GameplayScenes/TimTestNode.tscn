@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://likhm7ahw76g"]
+[gd_scene load_steps=6 format=3 uid="uid://likhm7ahw76g"]
 
 [ext_resource type="PackedScene" uid="uid://86ij870cpjes" path="res://PrefabScenes/shooter.tscn" id="1_eseho"]
 [ext_resource type="PackedScene" uid="uid://bwhdc21lbuiep" path="res://PrefabScenes/projectile.tscn" id="2_mkghs"]
 [ext_resource type="PackedScene" uid="uid://4aogylvacnjo" path="res://PrefabScenes/button.tscn" id="3_kwu5n"]
+[ext_resource type="PackedScene" uid="uid://drcxpqybyh87m" path="res://PrefabScenes/room_trans.tscn" id="4_k8n5j"]
+[ext_resource type="PackedScene" uid="uid://burmdmj7k48eh" path="res://PrefabScenes/Player.tscn" id="5_1rafj"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -10,8 +12,14 @@
 
 [node name="Projectile" parent="." instance=ExtResource("2_mkghs")]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.989052, 0.147568, 0, -0.147568, -0.989052, 0, 0.929553, -7.57569)
-
 [node name="Button" parent="." instance=ExtResource("3_kwu5n")]
 transform = Transform3D(0.970576, 0, 0, 0, 0.970576, 0, 0, 0, 0.970576, -3.79957, 0, 0.107449)
+
+[node name="RoomTrans" parent="." instance=ExtResource("4_k8n5j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.293013, 2.16766, 0.405558)
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("5_1rafj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31392, 1.33964, -3.41775)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6.30827, -0.377736)
