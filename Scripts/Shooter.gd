@@ -1,13 +1,18 @@
 extends Node
 @export var Speed :float
+@export var timeBetweenShots: float
+@export var projectile :PackedScene
 @export var RB :RigidBody3D
 @export var FirePoint:Transform3D
 
-@export var projectile :PackedScene
+var timer: float
 
 func _process(delta):		
-	_shoot()
-	pass
+	timer = timer + delta
+	if timer > timeBetweenShots:
+		_shoot()
+		timer = 0
+		pass
 	
 func _shoot():		
 	var p = projectile.instantiate()

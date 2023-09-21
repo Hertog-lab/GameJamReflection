@@ -9,6 +9,7 @@
 [node name="Node3D" type="Node3D"]
 
 [node name="Shooter" parent="." instance=ExtResource("1_eseho")]
+timeBetweenShots = 5.0
 
 [node name="Projectile" parent="." instance=ExtResource("2_mkghs")]
 
