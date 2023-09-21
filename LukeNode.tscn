@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7cwjiiu5tn47"]
+[gd_scene load_steps=10 format=3 uid="uid://c7cwjiiu5tn47"]
 
 [ext_resource type="Script" path="res://BulletBounce.gd" id="1_b1w7c"]
-[ext_resource type="Script" path="res://BulletBouncing.gd" id="2_8vhu2"]
+[ext_resource type="Script" path="res://DoorScript.gd" id="2_y7ko6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dujge"]
 
@@ -14,10 +14,15 @@ bounce = 1.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_imdaa"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_wm2fe"]
+size = Vector3(1, 0.953056, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ud6bt"]
+
 [node name="LukeNode" type="Node3D"]
 
 [node name="Plane" type="StaticBody3D" parent="." groups=["Reflective"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.48728, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.53111, -1.48728, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane"]
 transform = Transform3D(0.957208, 0.199572, 0, -1.26061, 0.151539, 0, 0, 0, 1.62689, 0, 0, 0)
@@ -28,7 +33,7 @@ transform = Transform3D(1, 3.72529e-09, 0, -2.38419e-07, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_uw4ve")
 
 [node name="Plane2" type="StaticBody3D" parent="." groups=["Enemy"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42453, -0.607327, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.95564, -0.607327, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane2"]
 transform = Transform3D(0.957208, 0.199572, 0, -1.26061, 0.151539, 0, 0, 0, 1.62689, 0, 0, 0)
@@ -43,6 +48,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.51328)
 current = true
 
 [node name="Bullet" type="RigidBody3D" parent="." groups=["Reflective"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.53111, 0, 0)
 physics_material_override = SubResource("PhysicsMaterial_3av0c")
 gravity_scale = 0.0
 contact_monitor = true
@@ -57,7 +63,6 @@ shape = SubResource("SphereShape3D_soqis")
 mesh = SubResource("SphereMesh_imdaa")
 
 [node name="Area3D" type="Area3D" parent="Bullet"]
-script = ExtResource("2_8vhu2")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Bullet/Area3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -68,5 +73,15 @@ transform = Transform3D(0.956269, -3.56238e-09, 0.292489, -0.0597578, 0.978907, 
 
 [node name="DirectionalLight3D10" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.955896, 0, -0.293707, 0, 1, 0, 0.293707, 0, 0.955896, -1.80749, 0.155139, 6.68913)
+
+[node name="Door" type="StaticBody3D" parent="."]
+script = ExtResource("2_y7ko6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 2.22042, 0, 0, 0, 0.178926, 0, 0, 0)
+shape = SubResource("BoxShape3D_wm2fe")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Door/CollisionShape3D"]
+mesh = SubResource("BoxMesh_ud6bt")
 
 [connection signal="body_entered" from="Bullet/Area3D" to="Bullet" method="_on_area_3d_body_entered"]

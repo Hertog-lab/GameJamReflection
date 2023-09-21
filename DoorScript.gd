@@ -1,20 +1,20 @@
-extends RigidBody3D
+extends StaticBody3D
 
+var active : bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	active = false
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if Input.is_action_just_pressed("OpenDoor"):
+		active = true
+		
+	if active == true:
+		self.position += Vector3(0, -2 * delta, 0)
+		
 	pass
 	
-
-func _on_area_3d_body_entered(body):
-	if body.is_in_group("Reflective"):
-		print("bounce")
-	elif body.is_in_group("Enemy"):
-		body.queue_free()
-	else:
-		
