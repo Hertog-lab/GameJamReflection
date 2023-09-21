@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://clostfh4oeana"]
+[gd_scene load_steps=5 format=3 uid="uid://clostfh4oeana"]
 
 [ext_resource type="PackedScene" uid="uid://ds510fjloqwt6" path="res://Art/Models/3d models/Wall light.fbx" id="1_v6s6h"]
 [ext_resource type="PackedScene" uid="uid://cwlwujdprtg6i" path="res://Art/Models/3d models/Lampie.fbx" id="2_3dmy1"]
 [ext_resource type="PackedScene" uid="uid://dn156jlnolyyp" path="res://Art/Models/3d models/tafel.fbx" id="3_vdyqo"]
+[ext_resource type="PackedScene" uid="uid://ckhrq5a6ytou" path="res://Art/Models/3d models/Box1.glb" id="4_s2sjo"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -14,3 +15,6 @@ transform = Transform3D(0.215559, 0, 0, 0, 0.215559, 0, 0, 0, 0.215559, 2.17423,
 
 [node name="tafel" parent="." instance=ExtResource("3_vdyqo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32088, 0, 1.04825)
+
+[node name="Box1" parent="." instance=ExtResource("4_s2sjo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.247118, 0, 4.37409)
