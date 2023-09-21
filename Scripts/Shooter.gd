@@ -5,9 +5,8 @@ extends Node
 
 @export var projectile :PackedScene
 
-func _process(delta):	
-	if Input.is_action_pressed("Shoot"):
-		_shoot()
+func _process(delta):		
+	_shoot()
 	pass
 	
 func _shoot():		

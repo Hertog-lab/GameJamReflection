@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c0uqnwki4iojn"
-path="res://.godot/imported/Loop_animatie(1).glb-611340a9df9d84931fd84c5d45dc02e7.scn"
+uid="uid://bbdxuck0fsgvp"
+path="res://.godot/imported/walk.glb-ef12c46704101e14009d442d4a21207f.scn"
 
 [deps]
 
-source_file="res://Art/Animations/Loop_animatie(1).glb"
-dest_files=["res://.godot/imported/Loop_animatie(1).glb-611340a9df9d84931fd84c5d45dc02e7.scn"]
+source_file="res://Art/Animations/walk.glb"
+dest_files=["res://.godot/imported/walk.glb-ef12c46704101e14009d442d4a21207f.scn"]
 
 [params]
 
