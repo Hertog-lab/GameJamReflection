@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var camera = get_node(^"../Camera3D")
 var rayOrigin = Vector3()
 var rayEnd = Vector3()
+var isReflecting = false
 
 # Calls the ready function of the current state
 func _ready():
@@ -11,7 +12,6 @@ func _ready():
 
 # Calleds the process function of the current state every frame
 func _process(_delta):
-	
 	state.StateProcess()
 
 func SwapState(swappedState):
