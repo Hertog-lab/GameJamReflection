@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://86ij870cpjes"]
+
+[ext_resource type="Script" path="res://Scripts/Shooter.gd" id="1_blhb6"]
+[ext_resource type="PackedScene" uid="uid://bwhdc21lbuiep" path="res://PrefabScenes/projectile.tscn" id="2_l3gab"]
+
+[node name="Shooter" type="Node3D" node_paths=PackedStringArray("RB")]
+transform = Transform3D(-4.37114e-08, -8.74228e-08, 1, 0, -1, -8.74228e-08, 1, 0, 4.37114e-08, 0, 0, 0)
+script = ExtResource("1_blhb6")
+Speed = 3.0
+RB = NodePath("")
+projectile = ExtResource("2_l3gab")
+
+[node name="Firepoint" type="Node3D" parent="."]
+transform = Transform3D(0.844253, 0, 0.535945, 0, 1, 0, -0.535945, 0, 0.844253, 0, 0, 0)
