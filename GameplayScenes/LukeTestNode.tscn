@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dar4sf7oquqsw"]
 
-[ext_resource type="Script" path="res://BulletBounce.gd" id="1_ekttq"]
+[ext_resource type="Script" path="res://Scripts/BulletBounce.gd" id="1_j61or"]
 [ext_resource type="Script" path="res://DoorScript.gd" id="2_18n3q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4mdqt"]
@@ -64,7 +64,7 @@ physics_material_override = SubResource("PhysicsMaterial_67txo")
 gravity_scale = 0.0
 contact_monitor = true
 linear_velocity = Vector3(0, -3, 0)
-script = ExtResource("1_ekttq")
+script = ExtResource("1_j61or")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bullet"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
