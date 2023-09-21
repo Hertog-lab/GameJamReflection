@@ -88,7 +88,7 @@ transform = Transform3D(0.955896, 0, -0.293707, 0, 1, 0, 0.293707, 0, 0.955896, 
 [node name="Door" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183368, 0.00626338, -2.00061)
 script = ExtResource("2_y7ko6")
-doorLimit = 2.0
+doorLimit = -3.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door"]
 transform = Transform3D(1, 0, 0, 0, 2.22042, 0, 0, 0, 0.178926, 0, 0, 0)

@@ -17,7 +17,9 @@ func _process(delta):
 		
 	if active == true:
 		self.position += Vector3(0, -2 * delta, 0)
-		
-	#if self.position.y < doorLimit:
-	#	self.queue_free()
+	
+	print(self.position.y)
+	
+	if self.position.y < doorLimit:
+		self.queue_free()
 		
