@@ -57,9 +57,7 @@ transform = Transform3D(0.956269, -3.56238e-09, 0.292489, -0.0597578, 0.978907, 
 transform = Transform3D(0.955896, 0, -0.293707, 0, 1, 0, 0.293707, 0, 0.955896, -1.80749, 0.155139, 6.68913)
 
 [node name="Door" parent="." instance=ExtResource("2_smbx2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183368, 0.00626338, -9.17519)
 
-[node name="Button" parent="." node_paths=PackedStringArray("door") instance=ExtResource("3_lov7c")]
+[node name="Button" parent="." instance=ExtResource("3_lov7c")]
 transform = Transform3D(0.118042, -0.993005, -0.00279623, 0.992726, 0.118075, -0.0235162, 0.0236819, 0, 0.99972, 0.836544, -1.31447, 0.0509225)
 script = ExtResource("4_wl1my")
-door = NodePath("../Door")
