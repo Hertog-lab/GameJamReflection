@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dar4sf7oquqsw"]
 
 [ext_resource type="Script" path="res://Scripts/BulletBounce.gd" id="1_j61or"]
-[ext_resource type="Script" path="res://DoorScript.gd" id="2_18n3q"]
+[ext_resource type="Script" path="res://Scripts/DoorScript.gd" id="2_pt887"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4mdqt"]
 
@@ -87,7 +87,7 @@ transform = Transform3D(0.955896, 0, -0.293707, 0, 1, 0, 0.293707, 0, 0.955896, 
 
 [node name="Door" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183368, 0.00626338, -2.00061)
-script = ExtResource("2_18n3q")
+script = ExtResource("2_pt887")
 doorLimit = -3.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door"]
