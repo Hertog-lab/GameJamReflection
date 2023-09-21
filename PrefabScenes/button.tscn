@@ -22,7 +22,6 @@ shape = SubResource("BoxShape3D_ryr8x")
 transform = Transform3D(0.200591, 0, 0, 0, 1, 0, 0, 0, 1, 0.0295615, -0.0387993, 0.00800419)
 shape = SubResource("BoxShape3D_ryr8x")
 script = ExtResource("1_u75ym")
-door = NodePath("")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
 mesh = SubResource("BoxMesh_67o56")

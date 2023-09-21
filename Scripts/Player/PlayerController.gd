@@ -30,7 +30,7 @@ func _physics_process(delta):
 
 	if not intersection.is_empty():
 		var pos = intersection.position
-		look_at(Vector3(pos.x, pos.y, pos.z), Vector3(0,1,0))
+		look_at(Vector3(pos.x, self.position.y, pos.z), Vector3(0,1,0))
 		
 	move_and_slide()
 

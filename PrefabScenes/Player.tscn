@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" path="res://Scripts/Player/PlayerController.gd" id="1_h5yex"]
 [ext_resource type="PackedScene" uid="uid://b8irvsam1vamv" path="res://PrefabScenes/PlayerStates/Idle.tscn" id="2_8ctrp"]
+[ext_resource type="PackedScene" uid="uid://bb4avlpaaf28k" path="res://Art/Models/lammpie.glb" id="2_j6av1"]
 [ext_resource type="PackedScene" uid="uid://cpiyd6r4e5smv" path="res://PrefabScenes/PlayerStates/Move.tscn" id="3_lbggi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhr7u"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_oupvc"]
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("state")]
 script = ExtResource("1_h5yex")
@@ -15,12 +14,8 @@ state = NodePath("States/Idle")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_xhr7u")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
-mesh = SubResource("CapsuleMesh_oupvc")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="CollisionShape3D"]
-transform = Transform3D(-0.0531028, 0.998589, 0, -0.998589, -0.0531028, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_oupvc")
+[node name="lammpie" parent="CollisionShape3D" instance=ExtResource("2_j6av1")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, -0.81611, 0)
 
 [node name="States" type="Node" parent="."]
 

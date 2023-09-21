@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://byjamdicequ7j"]
+[gd_scene load_steps=4 format=3 uid="uid://droagkbb5nsmu"]
 
 [ext_resource type="Script" path="res://Scripts/ButtonScript.gd" id="1_w6eyh"]
 [ext_resource type="Texture2D" uid="uid://b0fkjch6ug45e" path="res://Art/UI/Back_Button.png" id="2_aicey"]

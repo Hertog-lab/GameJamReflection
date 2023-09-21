@@ -1,5 +1,5 @@
 extends Node3D
-@onready var doors = get_node(^"../../../Door")
+@onready var doors = get_node(^"../../../Door3")
 
 func _ready():	
 	print(doors)

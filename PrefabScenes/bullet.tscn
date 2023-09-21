@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://drf758aljjsny"]
+[gd_scene load_steps=5 format=3 uid="uid://cnyi1r3fr6v07"]
 
 [ext_resource type="Script" path="res://Scripts/BulletBounce.gd" id="1_6i47d"]
 
@@ -11,9 +11,12 @@ bounce = 1.0
 
 [node name="Bullet" type="RigidBody3D" groups=["Projectile", "Reflective"]]
 transform = Transform3D(1.00439, 0, 0, 0, 1.00439, 0, 0, 0, 1.00439, -0.974757, 0.398288, 0)
+axis_lock_linear_y = true
+axis_lock_angular_y = true
 physics_material_override = SubResource("PhysicsMaterial_67txo")
 gravity_scale = 0.0
 contact_monitor = true
+lock_rotation = true
 linear_velocity = Vector3(0, -3, 0)
 script = ExtResource("1_6i47d")
 

@@ -17,7 +17,7 @@ func _process(delta):
 func _shoot():		
 	var p = projectile.instantiate()
 	owner.add_child(p)
-	p.transform = Transform3D.IDENTITY
+	p.transform = self.transform
 	RB = p	
 	RB.apply_central_impulse(self.global_transform.basis.z * -Speed)
 	pass
