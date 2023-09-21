@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://burmdmj7k48eh"]
+[gd_scene load_steps=8 format=3 uid="uid://burmdmj7k48eh"]
 
 [ext_resource type="Script" path="res://Scripts/Player/PlayerController.gd" id="1_h5yex"]
 [ext_resource type="PackedScene" uid="uid://b8irvsam1vamv" path="res://PrefabScenes/PlayerStates/Idle.tscn" id="2_8ctrp"]
-[ext_resource type="PackedScene" uid="uid://bb4avlpaaf28k" path="res://Art/Models/lammpie.glb" id="2_j6av1"]
+[ext_resource type="PackedScene" uid="uid://b6p5fu0o54x7f" path="res://Art/Animations/idle.glb" id="2_fvdfg"]
+[ext_resource type="PackedScene" uid="uid://bbdxuck0fsgvp" path="res://Art/Animations/walk.glb" id="3_8vfcd"]
 [ext_resource type="PackedScene" uid="uid://cpiyd6r4e5smv" path="res://PrefabScenes/PlayerStates/Move.tscn" id="3_lbggi"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerStates/ReflectionState.gd" id="6_j3cv8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhr7u"]
 
@@ -14,11 +16,17 @@ state = NodePath("States/Idle")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_xhr7u")
 
-[node name="lammpie" parent="CollisionShape3D" instance=ExtResource("2_j6av1")]
-transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, -0.81611, 0)
+[node name="idle" parent="CollisionShape3D" instance=ExtResource("2_fvdfg")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, -0.8, 0)
+
+[node name="walk" parent="CollisionShape3D" instance=ExtResource("3_8vfcd")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, -0.8, 0)
 
 [node name="States" type="Node" parent="."]
 
 [node name="Idle" parent="States" instance=ExtResource("2_8ctrp")]
 
 [node name="Move" parent="States" instance=ExtResource("3_lbggi")]
+
+[node name="Reflection" type="Node" parent="States"]
+script = ExtResource("6_j3cv8")
