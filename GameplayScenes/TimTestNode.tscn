@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://likhm7ahw76g"]
+
+[ext_resource type="PackedScene" uid="uid://86ij870cpjes" path="res://PrefabScenes/shooter.tscn" id="1_eseho"]
+[ext_resource type="PackedScene" uid="uid://bwhdc21lbuiep" path="res://PrefabScenes/projectile.tscn" id="2_mkghs"]
+[ext_resource type="PackedScene" uid="uid://4aogylvacnjo" path="res://PrefabScenes/button.tscn" id="3_kwu5n"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Shooter" parent="." instance=ExtResource("1_eseho")]
+
+[node name="Projectile" parent="." instance=ExtResource("2_mkghs")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.989052, 0.147568, 0, -0.147568, -0.989052, 0, 0.929553, -7.57569)
+
+[node name="Button" parent="." instance=ExtResource("3_kwu5n")]
+transform = Transform3D(0.970576, 0, 0, 0, 0.970576, 0, 0, 0, 0.970576, -3.79957, 0, 0.107449)
